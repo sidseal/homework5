@@ -40,17 +40,13 @@ $(document).ready(function(){
     })
     
     //refresh
-    let hours= [9,10,11,12,13,14,15,16,17]//list of hours we care about
+    let hours= [9,10,11,12,13,14,15,16,17]
     hours.forEach(function(hour){// we call this function for each of those hours
         var key = hour+"oclock" // formating our key so that we can get the value out of local storage
-        var data= localStorage.getItem(key)//the data is the value we get out
+        var data= localStorage.getItem(key)
         
         
-        $(`[data-hour='${hour}']`)/*
-        template literals lets us format the string easier than using plusses
-        [attribute='value'] is a form of css selector that gets all the elements that have that value of that attribute
-        $(".timeblock") === $([class='timeblock'])
-        */
+        $(`[data-hour='${hour}']`)
             .children("textarea").val(data)
         
     })
